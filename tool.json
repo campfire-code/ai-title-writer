@@ -2,12 +2,13 @@
   "id": "e09",
   "slug": "ai-title-writer",
   "name": "AI 标题卖点批量生成",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "repo": "campfire-code/ai-title-writer",
   "license": "MIT",
   "ui": {
-    "layout": "e",
-    "palette": "blue"
+    "layout": "d",
+    "palette": "blue",
+    "accent": "#CA2138"
   },
   "upstream": null
 }

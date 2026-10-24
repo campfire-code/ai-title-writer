@@ -4,6 +4,8 @@ import type { BatchTool, RunContext } from '../kit/types';
 import { baseName, cellText, errText, guessColumn, isFatalLlmError, mapPool, resolveColumn, safeName, splitList, toTable } from './common';
 import { PLATFORMS, buildMessages, effectiveLimit, finish, outputCells, outputHeader, parseReply, platformOf, previewText, rowToProduct, type Finished, type GenOptions, type Product } from './core';
 import { readSheets, writeXlsx } from './xlsx';
+import { Empty } from './Empty';
+import { ResultBody } from './Result';
 
 const NAME_KEYWORDS = [/^商品名称?$/, /^(产品|宝贝)名称?$/, /商品名|品名|产品名|宝贝名/, /名称/, /^(商品|产品|宝贝)$/, /标题/];
 const MAX_ROWS = 500;
@@ -31,7 +33,9 @@ const tool: BatchTool = {
   category: '电商运营',
   type: 'text',
   mode: 'batch',
-  resultView: 'text',
+  resultView: 'list',
+  Empty,
+  ResultBody,
   needsLLM: true,
   concurrency: 1,
   accept: { label: '商品表格', extensions: ['xlsx', 'csv', 'xls'] },

@@ -1,11 +1,11 @@
 // 截图与预览用的示例数据（不会进入正式运行）
 import type { Row } from '../kit/runner';
 
-const done = `8 个商品，生成 24 个标题，1 个超过 30 字（Excel 里已标红）。
-已保存：/Users/demo/Downloads/AI 标题卖点批量生成/商品清单-标题卖点.xlsx
+const done = `3 个商品，生成 9 个标题，1 个超过 30 字（Excel 里已标红）。
+已保存：D:/店铺运营/标题卖点/商品清单-标题卖点.xlsx
 
 【316不锈钢保温杯】
-1. 316不锈钢保温杯500ml大容量便携一键开盖防漏水杯（23 字）
+1. 316不锈钢保温杯500毫升大容量便携一键开盖防漏水杯（23 字）
 2. 保温杯男女上班族办公室316不锈钢长效保温12小时（22.5 字）
 3. 一键开盖保温杯316内胆防漏便携随行杯通勤户外学生党男女款大容量（30.5 字，超过 30 字）
 卖点：316不锈钢内胆，日常用更放心 / 实测保温12小时，早上的热水下午还烫 / 单手一按就开盖，开车通勤也方便 / 硅胶密封圈，倒放包里不漏水
@@ -27,7 +27,7 @@ const done = `8 个商品，生成 24 个标题，1 个超过 30 字（Excel 里
 export const rows = (state: string): Row[] => {
   if (state === 'empty') return [];
   const list: Row[] = [
-    { item: { id: 'p0', name: '商品清单.xlsx', path: '/示例/商品清单.xlsx', size: 7_544 }, status: 'ok', progress: 1, result: { summary: '8 个商品，生成 24 个标题', outputPath: '/示例/输出', text: done } },
+    { item: { id: 'p0', name: '商品清单.xlsx', path: '/示例/商品清单.xlsx', size: 7_544 }, status: 'ok', progress: 1, result: { summary: '3 个商品，生成 9 个标题', outputPath: '/示例/输出', text: done } },
     { item: { id: 'p1', name: '双十一新品-第二批.xlsx', path: '/示例/双十一新品-第二批.xlsx', size: 18_200 }, status: state === 'done' ? 'ok' : 'run', progress: 0.42, result: state === 'done' ? { summary: '20 个商品，生成 60 个标题', text: '20 个商品，生成 60 个标题，都在 30 字以内。' } : undefined },
   ];
   return list;
